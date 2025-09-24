@@ -92,3 +92,32 @@ plt.show()
 Et voici le résultat donnée : [Graphique Surface sur Consommation avec Regression](Surface_Consommation_Reg.png)
 Ce qui nous donne cette équation : 
 - Consommation = 1.1983392043139784 * Surface + 57.836671718730685
+
+Maintenant on va créer régression linéaire multiple, mais avec la consommation comme variable (Y) et la surface/temperature comme variable (X) : 
+
+```
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+df = pd.read_csv(r"C:\Users\Abdessamad\Downloads\donnees_consommation.csv") #Lecture du CSV
+
+X = df[['Temperature', 'Surface']].values #Variables Temperature/Surface
+
+y = df['Consommation'].values # Variable Consommation
+
+# Régression linéaire multiple
+model = LinearRegression()
+model.fit(X, y)
+
+# Récupérer les coefficients
+a, b = model.coef_   # a pour Temperature, b pour Surface
+c = model.intercept_
+
+print(f"Équation : Consommation = {a:.3f} * Température + {b:.3f} * Surface + {c:.3f}")
+
+```
+Ce qui nous donne cette équation : 
+- Consommation = -2.496 * Température + 1.187 * Surface + 101.886
+
+# Évaluation du modèle
+
