@@ -119,7 +119,7 @@ print(f"Équation : Consommation = {a:.3f} * Température + {b:.3f} * Surface + 
 Ce qui nous donne cette équation : 
 - Consommation = -2.496 * Température + 1.187 * Surface + 101.886
 
-# Évaluation du modèle
+## Évaluation du modèle
 
 Je modifie le programme au dessus pour connaitre le coefficient de détérmination R2 et l'erreur quadratique moyenne : 
 
@@ -157,3 +157,9 @@ MSE vaut 217.96 donc on a une erreur de 14.8 environ, ce qui est acceptable vu l
 Notre R2 est proche de 1, donc la température et la surface expliquent grandement les variations de consommation.
 
 Donc notre model est assez proche de la réalité !
+
+## Prédiction
+On va utiliser notre model pour faire de la prédiction : 
+• Quand la température est de 12 °C et la surface de 130 m².
+
+• Quand la température est de 28 °C et la surface de 110 m².
