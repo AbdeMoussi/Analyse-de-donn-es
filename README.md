@@ -121,3 +121,39 @@ Ce qui nous donne cette équation :
 
 # Évaluation du modèle
 
+Je modifie le programme au dessus pour connaitre le coefficient de détérmination R2 et l'erreur quadratique moyenne : 
+
+```
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+# Charger les données
+df = pd.read_csv(r"C:\Users\Abdessamad\Downloads\donnees_consommation.csv")
+
+X = df[['Temperature', 'Surface']].values
+y = df['Consommation'].values
+
+# Régression
+model = LinearRegression()
+model.fit(X, y)
+y_pred = model.predict(X)
+
+# MSE et R2
+mse = mean_squared_error(y, y_pred)
+r2 = r2_score(y, y_pred)
+
+print("MSE :", mse)
+print("R2 :", r2)
+print(f"Équation : Consommation = {model.coef_[0]:.3f} * Température + {model.coef_[1]:.3f} * Surface + {model.intercept_:.3f}")
+
+```
+
+Ce qui donne : 
+- MSE : 217.9650239723391
+- R2 : 0.9623173421499224
+- Équation : Consommation = -2.496 * Température + 1.187 * Surface + 101.886
+MSE vaut 217.96 donc on a une erreur de 14.8 environ, ce qui est acceptable vu la grandeur de variation de la consommation.
+Notre R2 est proche de 1, donc la température et la surface expliquent grandement les variations de consommation.
+
+Donc notre model est assez proche de la réalité !
