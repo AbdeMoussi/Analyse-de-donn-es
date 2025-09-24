@@ -57,3 +57,4 @@ plt.show()
 ```
 
 Et voici le résultat donnée : [Graphique Temperature sur Consommation](Temperature_Consommation_Reg.png)
+Ce qui nous donne cette équation : Consommation = -2.6756521139202563 * Température + 283.95837115769524
