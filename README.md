@@ -159,7 +159,24 @@ Notre R2 est proche de 1, donc la température et la surface expliquent grandeme
 Donc notre model est assez proche de la réalité !
 
 ## Prédiction
-On va utiliser notre model pour faire de la prédiction : 
+On va utiliser notre model pour faire de la prédiction :
+
 • Quand la température est de 12 °C et la surface de 130 m².
 
+Consommation=−2.496×12+1.187×130+101.886
+
+Consommation≈−29.952+154.31+101.886=226.24
+
+On aura donc une consommation de 226.24 Kwh
+
 • Quand la température est de 28 °C et la surface de 110 m².
+
+Consommation=−2.496×28+1.187×110+101.886
+
+Consommation≈−69.888+130.57+101.886=162.57 
+
+On aura donc une consommation de 162.57 Kwh
+
+## Améliorations du modèle
+
+Pour les pises d'amélioration, je pense qu'il faudrait ajouter une variable par rapport au nombre d'occupants, le type de chauffage utilisé et la température atteinte. 
