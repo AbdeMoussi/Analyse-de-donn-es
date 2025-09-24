@@ -23,4 +23,4 @@ plt.show()
 ```
 
 Ici on affiche les deux graphiques suivants : 
-[Graphique Temperature sur Consommation](Temperature_Consommation.md) [Graphique Surface sur Consommation](Surface_Consommation.md)
+[Graphique Temperature sur Consommation](Temperature_Consommation.png) [Graphique Surface sur Consommation](Surface_Consommation.png)
