@@ -30,7 +30,7 @@ Donc on consomme plus quand la surface augemente ou quand la température baisse
 
 ## Construction du modèle
 
-Maintenant on va mettre en place une régression linéaire avec la consommation comme variable cible (Y) et la température extérieure comme variable explicative (X) : 
+Maintenant on va mettre en place une régression linéaire avec la consommation comme variable (Y) et la température extérieure comme variable (X) : 
 
 ```
 import pandas   
@@ -56,6 +56,39 @@ plt.show()
 
 ```
 
-Et voici le résultat donnée : [Graphique Temperature sur Consommation](Temperature_Consommation_Reg.png)
+Et voici le résultat donnée : [Graphique Temperature sur Consommation avec Regression](Temperature_Consommation_Reg.png)
 Ce qui nous donne cette équation : 
 - Consommation = -2.6756521139202563 * Température + 283.95837115769524
+
+On peut mettre en place une régression linéaire comme l'exemple d'avant, mais avec la consommation comme variable (Y) et la surface comme variable (X) : 
+
+```
+import pandas   
+import numpy    
+import matplotlib.pyplot as plt 
+from scipy import stats
+
+df = pandas.read_csv(r"C:\Users\Abdessamad\Downloads\donnees_consommation.csv") #Bibliothéque de lecture des données
+Y = df['Consommation']
+X = df['Surface']
+Z = df['Temperature']
+
+slope, intercept, r, p, std_err = stats.linregress(X, Y)
+
+
+def myfunc(x):
+    print(slope)
+    print (intercept)
+    return slope * x + intercept
+
+mymodel = list(map(myfunc, X))
+
+plt.scatter(X, Y)
+plt.plot(X, mymodel)
+plt.show()
+
+```
+
+Et voici le résultat donnée : [Graphique Surface sur Consommation avec Regression](Surface_Consommation_Reg.png)
+Ce qui nous donne cette équation : 
+- Consommation = 1.1983392043139784 * Surface + 57.836671718730685
